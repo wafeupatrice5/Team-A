@@ -1,0 +1,27 @@
+#!/bin/bash
+
+FILE=iswarya*.txt
+
+if [[ ! -f "$FILE" ]]; then
+
+   touch "iswarya0.txt" ;
+
+fi
+
+ ls iswarya*.txt | sort -r --version-sort | head -1
+
+ string=`ls iswarya*.txt | sort -r --version-sort | head -1`
+
+i=$(echo $string | sed 's/[^0-9]*//g')
+
+newnumber=$(($i + 25))
+#echo $newnumber
+while [ $i -ne $newnumber ]
+
+do
+
+       i=$(($i+1))
+
+       touch "iswarya$i.txt"
+
+done
